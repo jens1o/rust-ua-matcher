@@ -1,0 +1,8 @@
+[package]
+name = "rust-ua-matcher"
+version = "0.1.0"
+authors = ["jens1o <jenshausdorf@gmail.com>"]
+
+[dependencies]
+regex = "1"
+lazy_static = "1"
