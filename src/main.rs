@@ -58,8 +58,6 @@ fn get_browser(user_agent: &str) -> Option<Browser> {
                 display_name,
                 version: matches.get(1).unwrap().as_str(),
             });
-        } else {
-            println!("{} returned false", regex);
         }
     }
 
