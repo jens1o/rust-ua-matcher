@@ -69,10 +69,10 @@ fn main() {
 
     println!("{}", title);
     println!("{}", "-".repeat(title.chars().count()));
-    println!("");
-    println!("Enter an User-Agent string to get the version string.");
 
     loop {
+        println!("");
+        println!("Enter an User-Agent string to get the version string.");
         print!("> ");
         io::stdout().flush().unwrap();
 
@@ -81,6 +81,10 @@ fn main() {
         io::stdin().read_line(&mut user_agent).unwrap();
 
         let user_agent: &str = user_agent.trim();
+
+        if user_agent.is_empty() {
+            continue;
+        }
 
         println!("User-Agent: {}", user_agent);
 
