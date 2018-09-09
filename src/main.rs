@@ -75,7 +75,7 @@ fn main() {
     let line = line.as_str();
 
     println!("{}", line);
-    println!("{} {} {0}", '|', TITLE);
+    println!("| {} |", TITLE);
     println!("{}", line);
 
     loop {
