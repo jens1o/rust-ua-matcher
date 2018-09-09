@@ -80,7 +80,7 @@ fn main() {
 
     loop {
         println!();
-        println!("Enter an User-Agent string to get the version string:");
+        println!("Enter an User-Agent string to get the version string(`q` or `exit` to quit):");
         print!("> ");
         io::stdout().flush().unwrap();
 
