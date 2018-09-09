@@ -66,15 +66,21 @@ lazy_static! {
     };
 }
 
-const TITLE: &str = "User-Agent matcher";
+const TITLE: &str = "User-Agent matcher by jens1o";
 
 fn main() {
-    println!("{}", TITLE);
-    println!("{}", "-".repeat(TITLE.chars().count()).as_str());
+    let line_length = TITLE.chars().count() + 4; // 2 (padding) + 2 (horizontal line) = 4
+    let line = "-".repeat(line_length);
+
+    let line = line.as_str();
+
+    println!("{}", line);
+    println!("{} {} {0}", '|', TITLE);
+    println!("{}", line);
 
     loop {
         println!();
-        println!("Enter an User-Agent string to get the version string.");
+        println!("Enter an User-Agent string to get the version string:");
         print!("> ");
         io::stdout().flush().unwrap();
 
@@ -88,6 +94,10 @@ fn main() {
             continue;
         }
 
+        if user_agent == "exit" || user_agent == "q" {
+            break;
+        }
+
         println!("User-Agent: {}", user_agent);
 
         if let Some(ref browser) = get_browser(user_agent) {
@@ -96,6 +106,8 @@ fn main() {
             println!("No result :/");
         }
     }
+
+    println!("Bye bye!");
 }
 
 /// Iterates on every known browser (precompiled-)regex
