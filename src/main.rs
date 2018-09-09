@@ -1,6 +1,8 @@
 //! # Rust UA Matcher
 //! Simple Rust application which extracts the Browser(the name an the used version)
 //! from the user-agent string.
+#![feature(tool_lints)]
+#![deny(clippy::all)]
 
 extern crate regex;
 #[macro_use]
@@ -64,14 +66,14 @@ lazy_static! {
     };
 }
 
-fn main() {
-    let title = "User-Agent matcher";
+const TITLE: &str = "User-Agent matcher";
 
-    println!("{}", title);
-    println!("{}", "-".repeat(title.chars().count()));
+fn main() {
+    println!("{}", TITLE);
+    println!("{}", "-".repeat(TITLE.chars().count()).as_str());
 
     loop {
-        println!("");
+        println!();
         println!("Enter an User-Agent string to get the version string.");
         print!("> ");
         io::stdout().flush().unwrap();
