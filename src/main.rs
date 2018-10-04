@@ -84,7 +84,7 @@ fn main() {
         print!("> ");
         io::stdout().flush().unwrap();
 
-        let mut user_agent = String::new();
+        let mut user_agent = String::with_capacity(32);
 
         io::stdin().read_line(&mut user_agent).unwrap();
 
